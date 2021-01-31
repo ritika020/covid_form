@@ -4,64 +4,37 @@
     padding: 0 !important;
     margin: 0 !important;
 }
-/*
-
-.WomenForm_img {
-    background-color: black;
-  }
-  .WomenForm_input {
-    width: 190px;
-    height: 38px;
-    border: 1px solid #cadeef;
-    box-sizing: border-box;
-    border-radius: 7px;
-  }
-  .WomenForm_heading {
-    margin-left: 46px;
-    margin-top: 92px;
-  
-    font-family: Poppins;
-    font-style: normal;
-    font-weight: 600;
-    font-size: 30px;
-    line-height: 45px;
-    text-align: left;
-    color: #29517c;
-  }
-  .WomenForm_head {
-    width: 515px;
-    height: 57px;
-    margin-left: 46px;
-    top: 138px;
-  
-    font-family: SF Pro Display;
-    font-style: normal;
-    font-weight: 200;
-    font-size: 48px;
-    line-height: 57px;
-    text-align: left;
-    color: #29517c;
-  }
-  .WomenForm_next {
-    width: 145px;
-    height: 41px;
-    margin-left: 287px;
-    margin-top: 85px;
-    color: white;
-    background: #390969;
-    border: 1px solid #e2ecf5;
-    box-sizing: border-box;
-    border-radius: 7px;
-  }
-  
-*/
-
-.Form_submit {position: absolute;
+.y1{
+    margin-left: 100px;
+    margin-top: 142px;
+}
+.y2{
+    margin-top: 20px;
+    margin-left: 100px;
+}
+.y3{
+    margin-top: 20px;
+    margin-left: 100px;
+}
+.y4{
+margin-left: 100px;
+margin-top: 20px;
+}
+.y5{
+margin-left: 100px;
+margin-top: 20px;
+}
+.y6{
+    margin-left: 100px;
+    margin-top: 20px;
+}
+.Form_submit {
+    /* position: absolute; */
     width: 216px;
     height: 36px;
-    left: 612px;
-    top: 787px;
-    color: white;
+    margin-left: 612px;
+    margin-top: 40px;
+    color: white; 
     background: #390969;
     border: 1px solid #e2ecf5;
     box-sizing: border-box;
@@ -69,9 +42,9 @@
   }
   
 .h1{
-width: 179px;
+/*width: 179px;
 height: 38px;
-/* left: 100px;
+ left: 100px;
 top: 142px; */
 
 font-family: "Poppins", sans-serif;
@@ -87,9 +60,9 @@ color: #390969;
 
 .c1{
     /*position: absolute;*/
-width: 1233px;
+/*width: 1233px;
 height: 72px;
-/* left: 103px;
+ left: 103px;
 top: 197px; */
 font-family: "Poppins", sans-serif;
 font-style: normal;
@@ -104,9 +77,9 @@ color: #000000;
 .h2{
 
     /* position: absolute; */
-    width: 217px;
+    /*width: 217px;
     height: 38px;
-    /* left: 100px;
+     left: 100px;
     top: 289px;
      */
     font-family: "Poppins", sans-serif;
@@ -123,9 +96,9 @@ color: #000000;
 .c2{
     
 /* position: absolute; */
-width: 1233px;
+/*width: 1233px;
 height: 48px;
-/* left: 100px;
+ left: 100px;
 top: 347px; */
 text-align: left;
 font-family: "Poppins" , sans-serif;
@@ -137,7 +110,7 @@ line-height: 24px;
 color: #000000;
 }
 
-
+/* 
 .f1{
     
 position: absolute;
@@ -164,7 +137,7 @@ height: 106px;
 left: 100px;
 top: 289px;
 
-}/*
+}/* */
 .form-control {
     display: block;
     width: 100%;
@@ -190,9 +163,10 @@ line-height: 21px;
 
 color: #390969;
 }   
+
 .Form_input {
-    width: 190px;
-    height: 38px;
+    /* width: 190px;
+    height: 38px; */
     border: 1px solid #cadeef;
     box-sizing: border-box;
     border-radius: 7px;
