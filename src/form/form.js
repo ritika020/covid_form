@@ -31,7 +31,7 @@ class first extends React.Component{
                      <div className="row y3">
                          
                      <div className="form-group col-md-3">
-                     <input type="name" class="form-control " id="Form_input" placeholder="First Name"/>
+                     <input type="name" class="form-control " id="Form_input" placeholder="First Name" style={{color:"#390969"}}/>
                      </div>
                      <div className="form-group col-md-3">
                      <input type="name" class="form-control" id="Form_input" placeholder="Middle Name"/>
