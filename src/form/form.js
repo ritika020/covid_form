@@ -31,50 +31,53 @@ class first extends React.Component{
                      <div className="row y3">
                          
                      <div className="form-group col-md-3">
-                     <input type="name" class="form-control " id="Form_input" placeholder="First Name" style={{color:"#390969"}}/>
+                     <input type="name" class="form-control " id="Form_input1" placeholder="First Name" style={{color:"#390969"}}/>
                      </div>
                      <div className="form-group col-md-3">
-                     <input type="name" class="form-control" id="Form_input" placeholder="Middle Name"/>
+                     <input type="name" class="form-control" id="Form_input2" placeholder="Middle Name"/>
                      </div>
                      <div className="form-group col-md-3">
-                     <input type="name" class="form-control" id="Form_input" placeholder="Last Name"/>
+                     <input type="name" class="form-control" id="Form_input3" placeholder="Last Name"/>
                      </div>
                      <div className="form-group col-md-3">
-                     <input type="name" class="form-control" id="Form_input" placeholder="Mobile Number"/>
+                     <input type="name" class="form-control" id="Form_input4" placeholder="Mobile Number"/>
                      </div>
                      </div>
                      <div className="row y4">
                              
                      <div className="form-group col-md-12">
-                     <input type="name" class="form-control " id="Form_input" placeholder="Address" style={{width:"100%"}}/>
+                     <textarea class="form-control" id="Form_input5" placeholder="Address" rows="2" required
+                      ></textarea>
+                     {/* <input type="name" class="form-control" id="Form_input5" placeholder="Address" /> */}
                      </div>
                      </div>
                      <div className="row y5">
     
                      <div className="form-group col-md-3">
-                     <input type="name" class="form-control " id="Form_input" placeholder="State"/>
+                     <input type="name" class="form-control " id="Form_input6" placeholder="State"/>
                      </div>
                      <div className="form-group col-md-3">
-                     <input type="name" class="form-control" id="Form_input" placeholder="District"/>
+                     <input type="name" class="form-control" id="Form_input7" placeholder="District"/>
                      </div>
                      <div className="form-group col-md-3">
-                     <input type="name" class="form-control" id="Form_input" placeholder="City/Gaon/Village"/>
+                     <input type="name" class="form-control" id="Form_input8" placeholder="City/Gaon/Village"/>
                      </div>
                      <div className="form-group col-md-3">
-                     <input type="name" class="form-control" id="Form_input" placeholder="Upload Images"/>
+                     <input type="name" class="form-control" id="Form_input9" placeholder="Upload Images"/>
                      </div>
                      </div>
                      <div className="row y6">
                              
                              <div className="form-group col-md-3">
-                             <input type="name" class="form-control " id="Form_input" placeholder="RTX3090" style={{height:"92px",width:"166px"}}/>
+                             <input type="name" class="form-control " id="Form_input10" placeholder="RTX3090" style={{height:"92px",width:"166px"}}/>
                              </div>
                              <div className="form-group col-md-4">
-                             <input type="name" class="form-control " id="Form_input" placeholder="Enter verification code" style={{marginLeft:"68px"}}/>
+                             <input type="name" class="form-control " id="Form_input12" placeholder="Enter verification code" style={{marginLeft:"68px"}}/>
                              </div>
-                             </div>
-                            
-                     <button className="Form_submit" > Submit Form</button>
+                    </div>
+                    <div className="row y7">     
+                     <button className="Form_submit" style={{alignSelf:"center"}}> Submit Form</button>
+                     </div>
             </form>
           </div>  
       );
