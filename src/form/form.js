@@ -23,11 +23,11 @@ class first extends React.Component{
                 Important Notice
             </div>
 
-            <div className="c2 col-12">
+            <div className="c2 col-md-12">
                 Nisl, duis est vel pretium, rhoncus egestas in porta. Iaculis arcu odio tellus quis nam nullam nunc, risus vulputate. Nulla in lacus sed curabitur. Faucibus id non convallis morbi diam arcu vitae nunc aliquet. In in mauris sem volutpat ege
             </div>
             </div>
-            <form className="row">
+            <form className="">
                      <div className="row y3">
                          
                      <div className="form-group col-md-3">
@@ -48,7 +48,6 @@ class first extends React.Component{
                      <div className="form-group col-md-12">
                      <textarea class="form-control" id="Form_input5" placeholder="Address" rows="2" required
                       ></textarea>
-                     {/* <input type="name" class="form-control" id="Form_input5" placeholder="Address" /> */}
                      </div>
                      </div>
                      <div className="row y5">
@@ -72,11 +71,11 @@ class first extends React.Component{
                              <input type="name" class="form-control " id="Form_input10" placeholder="RTX3090" style={{height:"92px",width:"166px"}}/>
                              </div>
                              <div className="form-group col-md-4">
-                             <input type="name" class="form-control " id="Form_input12" placeholder="Enter verification code" style={{marginLeft:"68px"}}/>
+                             <input type="name" class="form-control " id="Form_input12" placeholder="Enter verification code" style={{marginLeft:"50px"}}/>
                              </div>
                     </div>
-                    <div className="row y7">     
-                     <button className="Form_submit" style={{alignSelf:"center"}}> Submit Form</button>
+                    <div className="row y7 d-flex justify-content-center">     
+                     <button class="button" className="Form_submit" style={{alignSelf:"center"}}> Submit Form</button>
                      </div>
             </form>
           </div>  
