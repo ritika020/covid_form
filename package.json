@@ -1,6 +1,6 @@
 {
   "name": "upcloud-covid",
-  "homepage":"https://ritika020.github.io/covid_form",
+  "homepage": "https://ritika020.github.io/covid_form",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
