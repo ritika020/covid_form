@@ -2,6 +2,55 @@ import React from "react";
 import "./form.css";
 
 class first extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      data: {
+        firstName: "",
+        middleName: "",
+        lastName: "",
+        mobNum: "",
+        add: "",
+        state:"",
+        district:"",
+        city:"",
+        }
+        
+    };
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
+  addNew = (event) => {
+    event.preventDefault();
+  };
+  handleChange(e) {
+    this.setState({ [e.target.name]: e.target.value });
+  }
+  handleSubmit(e) {
+    e.preventDefault();
+    console.log(this.state);
+    const {
+      firstName,
+        middleName,
+        lastName,
+        mobNum,
+        add,
+        state,
+        district,
+        city,
+     
+    } = this.state.data;
+    if (!isNaN(firstName)) {
+      alert("Firstname contains number");
+    }
+    if (!isNaN(middleName)) {
+      alert("Middle name contains number");
+    }
+    if (!isNaN(lastName)) {
+      alert("Lastname contains number");
+    }
+    // console.log(this.state);
+  }
   render() {
     return (
       <div className="form__main">
@@ -28,85 +77,125 @@ class first extends React.Component {
             aliquet. In in mauris sem volutpat ege
           </div>
         </div>
-        <form className="">
+        <form onSubmit={this.handleSubmit}>
           <div className="row form__y3">
             <div className="form-group col-md-3 pl-0">
               <input
+              
+              name="firstName"
+                onChange={this.handleChange}
                 type="text"
-                class="form-control "
-                id="Form_input1"
+                class="form-control"
                 placeholder="First Name"
+                required
                 style={{ color: "#390969" }}
               />
+              <span className="Form__span">First Name</span>
+
             </div>
             <div className="form-group col-md-3 pl-0">
               <input
+                name="middleName"
+                onChange={this.handleChange}
                 type="text"
                 class="form-control"
-                id="Form_input2"
                 placeholder="Middle Name"
+                required
               />
+              <span className="Form__span">Middle Name</span>
+
             </div>
             <div className="form-group col-md-3 pl-0">
               <input
+              name="lastName"
+                onChange={this.handleChange}
                 type="text"
                 class="form-control"
-                id="Form_input3"
                 placeholder="Last Name"
+                required
               />
+              <span className="Form__span">Last Name</span>
+
             </div>
             <div className="form-group col-md-3 pl-0">
               <input
+              name="mobNum"
+                onChange={this.handleChange}
+              
                 type="number"
                 class="form-control"
-                id="Form_input4"
                 placeholder="Mobile Number"
-              />
+                required
+              />                            
+              <span className="Form__span">Mobile Number</span>
+
             </div>
           </div>
           <div className="row form__y4">
             <div className="form-group col-md-12 pl-0">
               <textarea
+              name="add"
+                onChange={this.handleChange}
+              
                 class="form-control"
-                id="Form_input5"
                 placeholder="Address"
                 rows="2"
                 required
-              ></textarea>
+              ></textarea>                                         
+               <span className="Form__span">Address</span>
+
             </div>
           </div>
           <div className="row form__y5">
             <div className="form-group col-md-3 pl-0">
               <input
+              name="state"
+                onChange={this.handleChange}
+              
                 type="text"
                 class="form-control "
-                id="Form_input6"
                 placeholder="State"
+                required
               />
+              <span className="Form__span">State</span>
+
             </div>
             <div className="form-group col-md-3 pl-0">
               <input
+              name="district"
+                onChange={this.handleChange}
+              
                 type="text"
                 class="form-control"
-                id="Form_input7"
+                required
                 placeholder="District"
-              />
+              />                           
+               <span className="Form__span">District</span>
+
             </div>
             <div className="form-group col-md-3 pl-0">
               <input
+              name="village"
+                onChange={this.handleChange}
+              
                 type="text"
                 class="form-control"
-                id="Form_input8"
+                required
                 placeholder="City/Gaon/Village"
-              />
+              />                           
+               <span className="Form__span">City/Gaon/Village</span>
+
             </div>
             <div className="form-group col-md-3 pl-0">
               <input
+              
                 type="file"
                 class="form-control"
-                id="Form_input9"
+                required
                 placeholder="Upload Images"
-              />
+              />                             
+              <span className="Form__span">Upload Images</span>
+
             </div>
           </div>
           <div className="row form__y6">
@@ -114,7 +203,6 @@ class first extends React.Component {
               <input
                 type="text"
                 class="form-control "
-                id="Form_input10"
                 placeholder="RTX3090"
                 style={{ height: "92px", width: "166px" }}
               />
@@ -125,7 +213,9 @@ class first extends React.Component {
                 class="form-control "
                 id="Form_input12"
                 placeholder="Enter verification code"
-              />
+              />                            
+              <span className="Form__span">Enter verification code</span>
+
             </div>
           </div>
           <div className="row form__y7 d-flex justify-content-center">
