@@ -86,7 +86,7 @@ class first extends React.Component {
                 onChange={this.handleChange}
                 type="text"
                 class="form-control"
-                placeholder="First Name"
+                 placeholder=" "
                 required
                 style={{ color: "#390969" }}
               />
@@ -99,7 +99,7 @@ class first extends React.Component {
                 onChange={this.handleChange}
                 type="text"
                 class="form-control"
-                placeholder="Middle Name"
+                 placeholder=" "
                 required
               />
               <span className="Form__span">Middle Name</span>
@@ -111,7 +111,7 @@ class first extends React.Component {
                 onChange={this.handleChange}
                 type="text"
                 class="form-control"
-                placeholder="Last Name"
+                placeholder=" "
                 required
               />
               <span className="Form__span">Last Name</span>
@@ -124,7 +124,7 @@ class first extends React.Component {
               
                 type="number"
                 class="form-control"
-                placeholder="Mobile Number"
+                placeholder=" "
                 required
               />                            
               <span className="Form__span">Mobile Number</span>
@@ -138,7 +138,7 @@ class first extends React.Component {
                 onChange={this.handleChange}
               
                 class="form-control"
-                placeholder="Address"
+                placeholder=" "
                 rows="2"
                 required
               ></textarea>                                         
@@ -154,7 +154,7 @@ class first extends React.Component {
               
                 type="text"
                 class="form-control "
-                placeholder="State"
+                placeholder=" "
                 required
               />
               <span className="Form__span">State</span>
@@ -168,7 +168,7 @@ class first extends React.Component {
                 type="text"
                 class="form-control"
                 required
-                placeholder="District"
+                placeholder=" "
               />                           
                <span className="Form__span">District</span>
 
@@ -181,7 +181,7 @@ class first extends React.Component {
                 type="text"
                 class="form-control"
                 required
-                placeholder="City/Gaon/Village"
+                placeholder=" "
               />                           
                <span className="Form__span">City/Gaon/Village</span>
 
@@ -212,7 +212,7 @@ class first extends React.Component {
                 type="name"
                 class="form-control "
                 id="Form_input12"
-                placeholder="Enter verification code"
+                placeholder=" "
               />                            
               <span className="Form__span">Enter verification code</span>
 
