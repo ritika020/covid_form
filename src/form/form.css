@@ -1,45 +1,35 @@
 .form__main {
   padding: 0 !important;
-  /* margin: 0 !important; */
 }
 .form-group {
   width: 100%;
 }
-.y1 {
-  /* margin-left: 100px; */
+.form__y1 {
   margin-top: 142px;
 }
-.y2 {
+.form__y2 {
   margin-top: 20px;
-  /* margin-left: 100px; */
 }
-.y3 {
+.form__y3 {
   margin-top: 40px;
-  /* margin-left: 100px; */
 }
-.y4 {
-  /* margin-left: 100px; */
+.form__y4 {
   margin-top: 20px;
 }
-.y5 {
-  /* margin-left: 100px; */
+.form__y5 {
   margin-top: 20px;
 }
-.y6 {
-  /* margin-left: 100px; */
+.form__y6 {
   margin-top: 20px;
 }
-.y7 {
+.form__y7 {
   margin-top: 100px;
   text-align: center;
   margin-bottom: 40px;
 }
 .Form_submit {
-  /* position: absolute; */
   width: 216px;
   height: 36px;
-  /* margin-left: 612px; */
-  /* margin-top: 40px; */
   color: white;
   background: #390969;
   border: 1px solid #e2ecf5;
@@ -47,13 +37,8 @@
   border-radius: 7px;
 }
 
-.h1 {
-  /*width: 179px;
-height: 38px;
- left: 100px;
-top: 142px; */
-
-  font-family: "Poppins", sans-serif;
+.form__h1 {
+    font-family: "Poppins", sans-serif;
   font-style: normal;
   font-weight: 600;
   font-size: 25px;
@@ -62,12 +47,8 @@ top: 142px; */
   color: #390969;
 }
 
-.c1 {
-  /*position: absolute;*/
-  /*width: 1233px;
-height: 72px;
- left: 103px;
-top: 197px; */
+.form__c1 {
+  
   font-family: "Poppins", sans-serif;
   font-style: normal;
   font-weight: normal;
@@ -78,13 +59,8 @@ top: 197px; */
   color: #000000;
 }
 
-.h2 {
-  /* position: absolute; */
-  /*width: 217px;
-    height: 38px;
-     left: 100px;
-    top: 289px;
-     */
+.form__h2 {
+  
   font-family: "Poppins", sans-serif;
   font-style: normal;
   font-weight: 600;
@@ -94,12 +70,8 @@ top: 197px; */
   color: #390969;
 }
 
-.c2 {
-  /* position: absolute; */
-  /*width: 1233px;
-height: 48px;
- left: 100px;
-top: 347px; */
+.form__c2 {
+  
   text-align: left;
   font-family: "Poppins", sans-serif;
   font-style: normal;
@@ -110,34 +82,6 @@ top: 347px; */
   color: #000000;
 }
 
-/* 
-.f1{
-    
-position: absolute;
-width: 1162px;
-height: 378px;
-left: 100px;
-top: 445px;
-
-}
-.t1{
-    
-position: absolute;
-width: 1236px;
-height: 127px;
-left: 100px;
-top: 142px;
-
-}
-.t2{
-    
-position: absolute;
-width: 1233px;
-height: 106px;
-left: 100px;
-top: 289px;
-
-}*/
 .form-control {
   display: block;
   width: 100%;
@@ -176,7 +120,7 @@ top: 289px;
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 
-.x1 {
+.form__x1 {
   font-family: "Poppins", sans-serif;
   font-style: normal;
   font-weight: normal;
@@ -212,88 +156,6 @@ top: 289px;
   box-sizing: border-box;
   border-radius: 7px;
 }
-/*
-.form-control {
-    display: block;
-    width: 100%;
-    padding: 0.375rem 0.75rem;
-    font-size: 1rem;
-    line-height: 1.5;
-    color: #495057;
-    background-color: #fff;
-    background-clip: padding-box;
-    border: 1px solid #cadeef;
-    border-radius: 0.5rem;
-    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-  }
-
-  input:focus + span,
-  input:not(:placeholder-shown) + span {
-    opacity: 1;
-    transform: scale(0.75) translateY(-80%) translateX(-18px);
-    background-color: white;
-    color: #495057;
-    padding: 0.175rem 0.5rem;
-  }
-  textarea:focus + span,
-  textarea:not(:placeholder-shown) + span {
-    opacity: 1;
-    transform: scale(0.8) translateY(-80%) translateX(-1px);
-    background-color: white;
-    color: #495057;
-    padding: 0.175rem 0.5rem;
-  }
-
-  .Forms_titleText {
-    color: rgb(62, 6, 62);
-  }
-  .Forms_first {
-    text-align: left;
-  }
-  .textarea {
-    resize: none;
-  }
-  .button {
-    border: none;
-    padding: 10px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 2px 2px;
-    cursor: pointer;
-  }
-  
-  .form-control::placeholder {
-    color: rgb(62, 6, 62);
-    opacity: 1;
-  }
-  .button1 {
-    border-radius: 25px;
-    background-color: #d6d4e0;
-    color: black;
-  }
-  .button2 {
-    border-radius: 25px;
-    background-color: #4caf50;
-    color: white;
-  }  
-
-span {
-    padding: 0.375rem 1rem;
-    pointer-events: none;
-    position: absolute;
-    top: 0;
-    left: 0;
-    line-height: 1.5;
-    font-size: 1rem;
-    color: #495057;
-    transition: 0.2s;
-    transition-timing-function: ease;
-    transition-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);
-    opacity: 0.8;
-}
-*/
 
 @media (max-width: 500px) {
   .Forms_pic {
@@ -327,7 +189,7 @@ span {
     margin-left: 35px;
     margin-right: 35px;
   }
-  .y7 {
+  .form__y7 {
     margin-top: 50px;
     text-align: center;
     margin-bottom: 50px;

@@ -5,10 +5,10 @@ class first extends React.Component {
   render() {
     return (
       <div className="form__main">
-        <div className="row y1">
-          <div className="h1">Enroll Yourself</div>
+        <div className="row form__y1">
+          <div className="form__h1">Enroll Yourself</div>
 
-          <div className="c1 col-12 p-0">
+          <div className="form__c1 col-12 p-0">
             Nisl, duis est vel pretium, rhoncus egestas in porta. Iaculis arcu
             odio tellus quis nam nullam nunc, risus vulputate. Nulla in lacus
             sed curabitur. Faucibus id non convallis morbi diam arcu vitae nunc
@@ -18,10 +18,10 @@ class first extends React.Component {
             suspendisse. Vestibulum cursus
           </div>
         </div>
-        <div className="row y2">
-          <div className="h2">Important Notice</div>
+        <div className="row form__y2">
+          <div className="form__h2">Important Notice</div>
 
-          <div className="c2 col-md-12 p-0">
+          <div className="form__c2 col-md-12 p-0">
             Nisl, duis est vel pretium, rhoncus egestas in porta. Iaculis arcu
             odio tellus quis nam nullam nunc, risus vulputate. Nulla in lacus
             sed curabitur. Faucibus id non convallis morbi diam arcu vitae nunc
@@ -29,7 +29,7 @@ class first extends React.Component {
           </div>
         </div>
         <form className="">
-          <div className="row y3">
+          <div className="row form__y3">
             <div className="form-group col-md-3 pl-0">
               <input
                 type="text"
@@ -64,7 +64,7 @@ class first extends React.Component {
               />
             </div>
           </div>
-          <div className="row y4">
+          <div className="row form__y4">
             <div className="form-group col-md-12 pl-0">
               <textarea
                 class="form-control"
@@ -75,7 +75,7 @@ class first extends React.Component {
               ></textarea>
             </div>
           </div>
-          <div className="row y5">
+          <div className="row form__y5">
             <div className="form-group col-md-3 pl-0">
               <input
                 type="text"
@@ -109,7 +109,7 @@ class first extends React.Component {
               />
             </div>
           </div>
-          <div className="row y6">
+          <div className="row form__y6">
             <div className="form-group col-md-2 pl-0">
               <input
                 type="text"
@@ -128,7 +128,7 @@ class first extends React.Component {
               />
             </div>
           </div>
-          <div className="row y7 d-flex justify-content-center">
+          <div className="row form__y7 d-flex justify-content-center">
             <button
               class="button"
               className="Form_submit"
