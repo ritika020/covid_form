@@ -1,5 +1,10 @@
 import React from "react";
 import "./form.css";
+//import ReCAPTCHA from "react-google-recaptcha";
+import RaisedButton from "material-ui/RaisedButton";
+import Recaptcha from 'react-google-invisible-recaptcha';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
+
 
 class first extends React.Component {
   constructor(props) {
@@ -14,6 +19,8 @@ class first extends React.Component {
         state:"",
         district:"",
         city:"",
+        message:"",
+        messageSent: false
         }
         
     };
@@ -25,6 +32,13 @@ class first extends React.Component {
   };
   handleChange(e) {
     this.setState({ [e.target.name]: e.target.value });
+  }
+  sendMessage=()=>{
+    this.recaptcha.execute();
+  }
+  onResolved=()=>{
+    this.setState({messageSent: true});
+    console.log(this.state)
   }
   handleSubmit(e) {
     e.preventDefault();
@@ -53,6 +67,8 @@ class first extends React.Component {
   }
   render() {
     return (
+      <MuiThemeProvider>
+
       <div className="form__main">
         <div className="row form__y1">
           <div className="form__h1">Enroll Yourself</div>
@@ -227,9 +243,22 @@ class first extends React.Component {
               {" "}
               Submit Form
             </button>
+
           </div>
+          <RaisedButton
+            label="Send"
+            style={StyleSheet.button}
+            onClick={this.sendMessage}
+            />
+            <Recaptcha
+              ref={ref=>this.recaptcha=ref}
+              sitekey="6LcS8U0aAAAAAGaOUd9LRVKHnhDBzShPHgZ8gErf"
+              onResolved={this.onResolved}
+              />
+
         </form>
       </div>
+      </MuiThemeProvider>
     );
   }
 }
