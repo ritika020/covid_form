@@ -24,7 +24,7 @@ class first extends React.Component {
         fileUploadState: null,
         fileName: "",
         fileImages: [],
-        fileImageName: [],
+        images: "",
       },
     };
     this.hiddenFileInput = React.createRef(null);
@@ -52,25 +52,12 @@ class first extends React.Component {
   };
 
   handleUpload = (e) => {
-    console.log(e.target.files);
-    const len = e.target.files.length;
-    // const fileUploaded = e.target.files[0];
-    let names = "";
-    let images = [];
-    for (let i = 0; i < len; i++) {
-      names = names + " " + e.target.files[i].name;
-      images.push(e.target.files[i]);
-    }
-
-    // console.log(fileUploaded);
-    // this.setState({
-    //   fileUploadState: fileUploaded,
-    //   fileName: fileUploaded.name,
-    // });
+    console.log(e.target.files.length);
+    const fileUploaded = e.target.files[0];
+    console.log(fileUploaded);
     this.setState({
-      fileImages: images,
-      //fileImageName: imageName,
-      fileName: names,
+      fileUploadState: fileUploaded,
+      fileName: fileUploaded.name,
     });
   };
 
@@ -96,33 +83,18 @@ class first extends React.Component {
     // data["message"] = formData.get("message") || this.state.message;
     // data["cityOrVillages"] = formData.get("cityOrVillages") || this.state.cityOrVillages;
     // data["district"] = formData.get("district") || this.state.district;
-    let tempImages = [];
-    console.log(this.state.fileImages);
+    // let tempImages = [];
+    // tempImages.push(this.state.fileUploadState);
     // data["myFiles"] = tempImages;
-    if (this.state.fileImages === undefined) {
-      alert("Add image");
-    } else {
-      console.log(this.state.fileImages);
-      const len = this.state.fileImages.length;
-      console.log(len);
-      for (let i = 0; i < len; i++) {
-        console.log(this.state.fileImages[i]);
-        data.append(
-          "myFiles",
-          this.state.fileImages[i],
-          this.state.fileImages[i].name
-        );
-      }
-
-      console.log(data.get("myFiles"));
-      sendCovidForm(data)
-        .then((response) => {
-          console.log(response);
-        })
-        .catch((err) => {
-          console.log(err);
-        });
-    }
+    data.append("myFiles", this.state.fileUploadState, this.state.fileName);
+    console.log(data);
+    sendCovidForm(data)
+      .then((response) => {
+        console.log(response);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   }
 
   render() {
@@ -158,9 +130,11 @@ class first extends React.Component {
                 <input
                   id="firstName"
                   name="firstName"
+                  title="*ENTER CHARACTER VALUES ONLY"
+                  pattern="[A-Za-z_ ]{1,32}"
                   onChange={this.handleChange}
                   type="text"
-                  className="form-control"
+                  class="form-control"
                   placeholder=" "
                   required
                   style={{ color: "#390969" }}
@@ -173,7 +147,9 @@ class first extends React.Component {
                   name="middleName"
                   onChange={this.handleChange}
                   type="text"
-                  className="form-control"
+                  class="form-control"
+                  title="*ENTER CHARACTER VALUES ONLY"
+                  pattern="[A-Za-z_ ]{1,32}"
                   placeholder=" "
                   required
                 />
@@ -185,7 +161,9 @@ class first extends React.Component {
                   id="sirname"
                   onChange={this.handleChange}
                   type="text"
-                  className="form-control"
+                  class="form-control"
+                  title="*ENTER CHARACTER VALUES ONLY"
+                  pattern="[A-Za-z_ ]{1,32}"
                   placeholder=" "
                   required
                 />
@@ -198,7 +176,7 @@ class first extends React.Component {
                   onChange={this.handleChange}
                   pattern="[1-9]{1}[0-9]{9}"
                   type="tel"
-                  className="form-control"
+                  class="form-control"
                   placeholder=" "
                   required
                 />
@@ -211,7 +189,7 @@ class first extends React.Component {
                   id="address"
                   name="address"
                   onChange={this.handleChange}
-                  className="form-control"
+                  class="form-control"
                   placeholder=" "
                   rows="2"
                   required
@@ -226,7 +204,9 @@ class first extends React.Component {
                   name="state"
                   onChange={this.handleChange}
                   type="text"
-                  className="form-control "
+                  class="form-control "
+                  title="*ENTER CHARACTER VALUES ONLY"
+                  pattern="[A-Za-z_ ]{1,32}"
                   placeholder=" "
                   required
                 />
@@ -236,9 +216,11 @@ class first extends React.Component {
                 <input
                   id="district"
                   name="district"
+                  title="*ENTER CHARACTER VALUES ONLY"
+                  pattern="[A-Za-z_ ]{1,32}"
                   onChange={this.handleChange}
                   type="text"
-                  className="form-control"
+                  class="form-control"
                   required
                   placeholder=" "
                 />
@@ -250,7 +232,9 @@ class first extends React.Component {
                   name="village"
                   onChange={this.handleChange}
                   type="text"
-                  className="form-control"
+                  title="*ENTER CHARACTER VALUES ONLY"
+                  pattern="[A-Za-z_ ]{1,32}"
+                  class="form-control"
                   required
                   placeholder=" "
                 />
@@ -258,24 +242,24 @@ class first extends React.Component {
               </div>
               <div className="form-group col-md-3 pl-0">
                 <button
-                  type="button"
                   className="btn"
+                  type="button"
                   onClick={this.handleClick}
                 >
                   Upload Image
                 </button>
                 <input
                   type="file"
-                  multiple
-                  // required
+                  required
                   ref={this.hiddenFileInput}
                   id="fileButton"
                   onChange={this.handleUpload}
                   style={{ display: "none" }}
                   // placeholder="Upload Images"
                 />
-
-                <p>{this.state.fileName}</p>
+                {this.state.fileUploadState != null && (
+                  <p>{this.state.fileName}</p>
+                )}
               </div>
             </div>
             {/* <div className="row form__y6">
@@ -300,8 +284,8 @@ class first extends React.Component {
           </div> */}
             <div className="row form__y7 d-flex justify-content-center">
               <button
-                type="submit"
-                className="Form_submit button"
+                class="button"
+                className="Form_submit"
                 style={{ alignSelf: "center" }}
               >
                 {" "}
