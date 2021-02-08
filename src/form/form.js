@@ -3,7 +3,8 @@ import "./form.css";
 //import ReCAPTCHA from "react-google-recaptcha";
 import RaisedButton from "material-ui/RaisedButton";
 import Recaptcha from 'react-google-invisible-recaptcha';
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import {sendCovidForm} from '../DataService/CovidForm'
 
 
 class first extends React.Component {
@@ -13,17 +14,21 @@ class first extends React.Component {
       data: {
         firstName: "",
         middleName: "",
-        lastName: "",
-        mobNum: "",
-        add: "",
+        sirname: "",
+        contactNo: "",
+        address: "",
         state:"",
         district:"",
-        city:"",
+        cityOrVillages:"",
         message:"",
-        messageSent: false
+        messageSent: false,
+        fileUploadState : null,
+        fileName : "",
+        images : []
         }
         
     };
+    this.hiddenFileInput = React.createRef(null);
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
@@ -31,40 +36,67 @@ class first extends React.Component {
     event.preventDefault();
   };
   handleChange(e) {
-    this.setState({ [e.target.name]: e.target.value });
+    this.setState({ 
+      [e.target.name]: e.target.value });
   }
-  sendMessage=()=>{
-    this.recaptcha.execute();
-  }
+  // sendMessage=()=>{
+  //   this.recaptcha.execute();
+  // }
   onResolved=()=>{
     this.setState({messageSent: true});
-    console.log(this.state)
   }
+
+  // for handling file upload 
+   handleClick = (e) => {
+    this.hiddenFileInput.current.click();
+  };
+
+    handleUpload = (e) =>{
+      const fileUploaded = e.target.files[0];
+      console.log(fileUploaded)
+      this.setState({
+        fileUploadState:fileUploaded,
+        fileName:fileUploaded.name
+      })
+    }
+
+
+
+    
   handleSubmit(e) {
     e.preventDefault();
-    console.log(this.state);
-    const {
-      firstName,
-        middleName,
-        lastName,
-        mobNum,
-        add,
-        state,
-        district,
-        city,
-     
-    } = this.state.data;
-    if (!isNaN(firstName)) {
-      alert("Firstname contains number");
-    }
-    if (!isNaN(middleName)) {
-      alert("Middle name contains number");
-    }
-    if (!isNaN(lastName)) {
-      alert("Lastname contains number");
-    }
-    // console.log(this.state);
+      this.recaptcha.execute();
+    var formData = new FormData(e.target);
+    const data = new FormData();
+    data.append("firstName",this.state.firstName)
+    data.append("middleName",this.state.middleName)
+    data.append("sirname",this.state.sirname)
+    data.append("contactNo",this.state.contactNo)
+    data.append("state",this.state.state)
+    data.append("message",this.state.message)
+    data.append("cityOrVillages",this.state.cityOrVillages)
+    data.append("district",this.state.district)
+    // data["sirname"] = formData.get("sirname") || this.state.sirname;
+    // data["middleName"] = formData.get("middleName") || this.state.middleName;
+    // data["contactNo"] = formData.get("contactNo") || this.state.contactNo;
+    // data["address"] =
+    //   formData.get("address") || this.state.address;
+    // data["state"] = formData.get("state") || this.state.state;
+    // data["message"] = formData.get("message") || this.state.message;
+    // data["cityOrVillages"] = formData.get("cityOrVillages") || this.state.cityOrVillages;
+    // data["district"] = formData.get("district") || this.state.district;
+    let tempImages = []
+    tempImages.push(this.state.fileUploadState)
+   // data["myFiles"] = tempImages;
+    data.append('myFiles',this.state.fileUploadState,this.state.fileName)
+   console.log(data);
+    sendCovidForm(data)
+    .then((response)=>{console.log(response)})
+    .catch((err) => {
+      console.log(err);
+    });
   }
+
   render() {
     return (
       <MuiThemeProvider>
@@ -97,7 +129,7 @@ class first extends React.Component {
           <div className="row form__y3">
             <div className="form-group col-md-3 pl-0">
               <input
-              
+              id="firstName"
               name="firstName"
                 onChange={this.handleChange}
                 type="text"
@@ -111,6 +143,7 @@ class first extends React.Component {
             </div>
             <div className="form-group col-md-3 pl-0">
               <input
+                 id="middleName"
                 name="middleName"
                 onChange={this.handleChange}
                 type="text"
@@ -123,7 +156,8 @@ class first extends React.Component {
             </div>
             <div className="form-group col-md-3 pl-0">
               <input
-              name="lastName"
+              name="sirname"
+              id="sirname"
                 onChange={this.handleChange}
                 type="text"
                 class="form-control"
@@ -135,9 +169,9 @@ class first extends React.Component {
             </div>
             <div className="form-group col-md-3 pl-0">
               <input
-              name="mobNum"
+              id="contactNo"
+              name="contactNo"
                 onChange={this.handleChange}
-              
                 type="number"
                 class="form-control"
                 placeholder=" "
@@ -150,7 +184,8 @@ class first extends React.Component {
           <div className="row form__y4">
             <div className="form-group col-md-12 pl-0">
               <textarea
-              name="add"
+              id="address"
+              name="address"
                 onChange={this.handleChange}
               
                 class="form-control"
@@ -165,6 +200,7 @@ class first extends React.Component {
           <div className="row form__y5">
             <div className="form-group col-md-3 pl-0">
               <input
+              id="state"
               name="state"
                 onChange={this.handleChange}
               
@@ -178,6 +214,7 @@ class first extends React.Component {
             </div>
             <div className="form-group col-md-3 pl-0">
               <input
+              id="district"
               name="district"
                 onChange={this.handleChange}
               
@@ -191,6 +228,7 @@ class first extends React.Component {
             </div>
             <div className="form-group col-md-3 pl-0">
               <input
+              id="village"
               name="village"
                 onChange={this.handleChange}
               
@@ -203,18 +241,22 @@ class first extends React.Component {
 
             </div>
             <div className="form-group col-md-3 pl-0">
-              <input
-              
+            <button className="btn" onClick={this.handleClick}>Upload Image</button>
+              <input    
                 type="file"
-                class="form-control"
                 required
-                placeholder="Upload Images"
+                ref={this.hiddenFileInput}
+                id="fileButton"
+                onChange={this.handleUpload}
+                style={{display: 'none'}}
+                // placeholder="Upload Images"
               />                             
-              <span className="Form__span">Upload Images</span>
-
+             {this.state.fileUploadState != null &&
+             <p>{this.state.fileName}</p> 
+             }
             </div>
           </div>
-          <div className="row form__y6">
+          {/* <div className="row form__y6">
             <div className="form-group col-md-2 pl-0">
               <input
                 type="text"
@@ -233,7 +275,7 @@ class first extends React.Component {
               <span className="Form__span">Enter verification code</span>
 
             </div>
-          </div>
+          </div> */}
           <div className="row form__y7 d-flex justify-content-center">
             <button
               class="button"
@@ -245,11 +287,11 @@ class first extends React.Component {
             </button>
 
           </div>
-          <RaisedButton
+          {/* <RaisedButton
             label="Send"
             style={StyleSheet.button}
             onClick={this.sendMessage}
-            />
+            /> */}
             <Recaptcha
               ref={ref=>this.recaptcha=ref}
               sitekey="6LcS8U0aAAAAAGaOUd9LRVKHnhDBzShPHgZ8gErf"
