@@ -33,7 +33,6 @@ textarea:not(:placeholder-shown) + span {
   padding: 0.175rem 0.5rem;
 }
 
-
 .form__main {
   padding: 0 !important;
 }
@@ -74,7 +73,7 @@ textarea:not(:placeholder-shown) + span {
 }
 
 .form__h1 {
-    font-family: "Poppins", sans-serif;
+  font-family: "Poppins", sans-serif;
   font-style: normal;
   font-weight: 600;
   font-size: 25px;
@@ -84,7 +83,6 @@ textarea:not(:placeholder-shown) + span {
 }
 
 .form__c1 {
-  
   font-family: "Poppins", sans-serif;
   font-style: normal;
   font-weight: normal;
@@ -96,7 +94,6 @@ textarea:not(:placeholder-shown) + span {
 }
 
 .form__h2 {
-  
   font-family: "Poppins", sans-serif;
   font-style: normal;
   font-weight: 600;
@@ -107,7 +104,6 @@ textarea:not(:placeholder-shown) + span {
 }
 
 .form__c2 {
-  
   text-align: left;
   font-family: "Poppins", sans-serif;
   font-style: normal;
