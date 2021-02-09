@@ -91,8 +91,13 @@ class first extends React.Component {
     sendCovidForm(data)
       .then((response) => {
         console.log(response);
+        if (response.data.status === "success") {
+          alert("Success " + response.data.message);
+          window.location.reload();
+        }
       })
       .catch((err) => {
+        alert("Error : " + err);
         console.log(err);
       });
   }
