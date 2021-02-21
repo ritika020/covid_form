@@ -7,6 +7,7 @@ function App() {
   return (
     <div className="App">
      <First/>
+     <div className="footer_upcloud">Powered by Upcloud Technology Pvt. Ltd.</div>
      </div>
   );
 }

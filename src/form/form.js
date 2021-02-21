@@ -25,6 +25,7 @@ class first extends React.Component {
         fileName: "",
         fileImages: [],
         images: "",
+        natureOfService:""
       },
     };
     this.hiddenFileInput = React.createRef(null);
@@ -86,6 +87,7 @@ class first extends React.Component {
     // let tempImages = [];
     // tempImages.push(this.state.fileUploadState);
     // data["myFiles"] = tempImages;
+    data.append("natureOfService", this.state.natureOfService);
     data.append("myFiles", this.state.fileUploadState, this.state.fileName);
     console.log(data);
     sendCovidForm(data)
@@ -245,9 +247,26 @@ class first extends React.Component {
                 />
                 <span className="Form__span">City/Gaon/Village</span>
               </div>
+              
+
+              <div className="form-group col-md-3 pl-0">
+                <input
+                  id="natureOfService"
+                  name="natureOfService"
+                  onChange={this.handleChange}
+                  type="text"
+                  title="*ENTER CHARACTER VALUES ONLY"
+                  pattern="[A-Za-z_ ]{1,32}"
+                  class="form-control"
+                  required
+                  placeholder=" "
+                />
+                <span className="Form__span">Nature Of Service</span>
+              </div>
+
               <div className="form-group col-md-3 pl-0">
                 <button
-                  className="btn"
+                  className="btn upload_button"
                   type="button"
                   onClick={this.handleClick}
                 >
